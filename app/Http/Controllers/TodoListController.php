@@ -9,7 +9,11 @@ class TodoListController extends Controller
 {
     public function get_data(Request $request) {
         if ($request->isMethod('post')) {
-            TodoList::create(["data" => $request->input("data")]);
+            if ($request->del == "true") {
+                TodoList::destroy($request->id);
+            } else {
+                TodoList::create(["data" => $request->data]);
+            }
         }
         return view("todo_list", new TodoList(["data" => TodoList::all()]));
     }
