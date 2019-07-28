@@ -11,6 +11,10 @@ class TodoListController extends Controller
         if ($request->isMethod('post')) {
             if ($request->del == "true") {
                 TodoList::destroy($request->id);
+            } elseif ($request->edit == "true") {
+                $elem = TodoList::find((int)$request->id);
+                $elem->data = $request->data;
+                $elem->save();
             } else {
                 TodoList::create(["data" => $request->data]);
             }
