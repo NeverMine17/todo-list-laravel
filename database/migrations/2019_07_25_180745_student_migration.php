@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TodoListMigration extends Migration
+class StudentMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class TodoListMigration extends Migration
      */
     public function up()
     {
-        Schema::create('todo_lists', function (Blueprint $table) {
+        Schema::create('students', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('group_id')->nullable();
@@ -27,6 +27,6 @@ class TodoListMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('todo_lists');
+        Schema::dropIfExists('students');
     }
 }
