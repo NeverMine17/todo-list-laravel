@@ -15,7 +15,8 @@ class TodoListMigration extends Migration
     {
         Schema::create('todo_lists', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('data');
+            $table->text('name');
+            $table->text('group_id')->nullable();
         });
     }
 

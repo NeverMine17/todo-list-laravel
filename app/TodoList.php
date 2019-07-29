@@ -9,6 +9,11 @@ class TodoList extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'data'      
+        'name',
+        'group_id'
     ];
+
+    public function groups() {
+        return $this->belongsTo("App\Group", "group_id", "id");
+    }
 }

@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('/table', 'TodoListController@get_data');
+Route::get('/table', 'TodoListController@get_data');
+Route::post('/table/create', 'TodoListController@create')->name('create');
+Route::delete('/table/delete/{id}', 'TodoListController@delete')->name('delete');
