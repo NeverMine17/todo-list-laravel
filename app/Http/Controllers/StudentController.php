@@ -3,22 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TodoList;
+use App\Student;
 
-class TodoListController extends Controller
+class StudentController extends Controller
 {
     public function get_data(Request $request) {
-        return view("todo_list", ["data" => TodoList::all()]);
+        return view("students", ["data" => Student::all()]);
     }
 
     public function create(Request $request) {
-        TodoList::create($request->all());
+        Student::create($request->all());
 
         return back();
     }
 
     public function delete($id) {
-        $student = TodoList::find($id, "id");
+        $student = Student::find($id, "id");
         $student->delete();
         return back();
     }

@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/table', 'TodoListController@get_data');
-Route::post('/table/create', 'TodoListController@create')->name('create');
-Route::delete('/table/delete/{id}', 'TodoListController@delete')->name('delete');
+Route::get('/students', 'StudentController@get_data');
+Route::post('/students/create', 'StudentController@create')->name('create');
+Route::delete('/students/delete/{id}', 'StudentController@delete')->name('delete');

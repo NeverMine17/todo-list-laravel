@@ -11,6 +11,6 @@ class Group extends Model
     protected $fillable = ["name"];
 
     public function tasks() {
-        return $this->hasMany("App\TodoList");
+        return $this->hasMany("App\Student");
     }
 }
