@@ -31,7 +31,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Группа</th>
-                    <th>Текст</th>
+                    <th>Ф.И.О</th>
+                    <th>Дата рождения</th>
                     <th></th>
                 </tr>
             </thead>
@@ -53,7 +54,8 @@
                             <button class="btn">Edit group</button>
                         </form>
                     </th>
-                    <th>{{ $todo->data }}</th>
+                    <th>{{ $todo->name }}</th>
+                    <th>{{ $todo->date_of_birth }}</th>
                     <th>
                         <form action="{{ route('delete', ['id' => $todo->id]) }}" method="POST">
                             @csrf

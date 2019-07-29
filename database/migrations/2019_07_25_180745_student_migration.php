@@ -17,6 +17,7 @@ class StudentMigration extends Migration
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('group_id')->nullable();
+            $table->text('date_of_birth')->nullable();
         });
     }
 
