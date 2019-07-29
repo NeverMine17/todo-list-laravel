@@ -40,7 +40,9 @@
                 <tr>
                     <th>{{ $todo->id }}</th>
                     <th>
+                        @if ($todo->groups != null)
                         {{ $todo->groups->name }}
+                        @endif
                         <form action="{{ route('edit', ['id' => $todo->id]) }}" method="POST">
                             @csrf
                             @if ($todo->groups != null)
