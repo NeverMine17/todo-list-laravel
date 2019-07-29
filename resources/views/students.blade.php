@@ -40,10 +40,16 @@
                 <tr>
                     <th>{{ $todo->id }}</th>{{ $todo->group }}
                     <th>
-                        <form action="{{ route('delete', ['id' => $todo->id]) }}" method="POST">
+                        {{ $todo->groups->name }}
+                        <form action="{{ route('edit', ['id' => $todo->id]) }}" method="POST">
                             @csrf
-                            {{ method_field("delete") }}
-                            <button class="btn">Delete</button>
+
+                            @if ($todo->groups != null)
+                            <input name="group_id" value="{{ $todo->groups->id }}">
+                            @else
+                            <input name="group_id">
+                            @endif
+                            <button class="btn">Edit group</button>
                         </form>
                     </th>
                     <th>{{ $todo->data }}</th>

@@ -22,4 +22,10 @@ class StudentController extends Controller
         $student->delete();
         return back();
     }
+
+    public function edit(Request $request, $id) {
+        $student = Student::find($id, "id");
+        $student->update($request->all());
+        return back();
+    }
 }
