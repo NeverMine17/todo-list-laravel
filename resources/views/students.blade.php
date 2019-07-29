@@ -38,12 +38,11 @@
             <tbody>
                 @foreach ($data as $todo)
                 <tr>
-                    <th>{{ $todo->id }}</th>{{ $todo->group }}
+                    <th>{{ $todo->id }}</th>
                     <th>
                         {{ $todo->groups->name }}
                         <form action="{{ route('edit', ['id' => $todo->id]) }}" method="POST">
                             @csrf
-
                             @if ($todo->groups != null)
                             <input name="group_id" value="{{ $todo->groups->id }}">
                             @else
