@@ -18,6 +18,7 @@ class StudentController extends Controller
         } 
         else{
             return view("students", ["data" => Student::all()]);
+            
         }
     }
 
