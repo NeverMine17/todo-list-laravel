@@ -29,6 +29,7 @@
                 <form action="{{ route('create') }}" method="POST">
                     @csrf
                     <input name="name">
+                    <input name="date_of_birth">
                     <button class="btn">Save</button>
                 </form>
             </div>

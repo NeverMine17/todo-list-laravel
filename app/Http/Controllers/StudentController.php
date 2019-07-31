@@ -10,13 +10,10 @@ class StudentController extends Controller
     public function get_data(Request $request) {
         
         if($request->method()=="POST"){
-
-
             $students = Student::where('name', 'like', "%" . $request->search . "%")->get();
             
             return view("students", ["data" => $students]);
-        } 
-        else{
+        } else {
             return view("students", ["data" => Student::all()]);
         }
     }
