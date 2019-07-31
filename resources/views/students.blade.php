@@ -19,6 +19,13 @@
     </head>
     <body>
             <div class="card card-default">
+                    <form action="{{ route('get_data') }}" method="POST">
+                        @csrf
+                        <input name="search">
+                        <button class="btn">Search</button>
+                    </form>
+                </div>    
+        <div class="card card-default">
                 <form action="{{ route('create') }}" method="POST">
                     @csrf
                     <input name="name">
