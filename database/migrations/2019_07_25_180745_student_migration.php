@@ -18,6 +18,10 @@ class StudentMigration extends Migration
             $table->text('name');
             $table->text('group_id')->nullable();
             $table->text('date_of_birth')->nullable();
+            $table->text('math')->nullable();
+            $table->text('history')->nullable();
+            $table->text('inform')->nullable();
+            $table->text('avg')->nullable();
         });
     }
 
