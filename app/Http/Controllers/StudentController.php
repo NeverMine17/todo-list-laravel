@@ -8,7 +8,17 @@ use App\Student;
 class StudentController extends Controller
 {
     public function get_data(Request $request) {
-        return view("students", ["data" => Student::all()]);
+        
+        if($request->method()=="POST"){
+
+
+            $students = Student::where('name', 'like', "%" . $request->search . "%")->get();
+            
+            return view("students", ["data" => $students]);
+        } 
+        else{
+            return view("students", ["data" => Student::all()]);
+        }
     }
 
     public function create(Request $request) {
@@ -28,4 +38,5 @@ class StudentController extends Controller
         $student->update($request->all());
         return back();
     }
+
 }
